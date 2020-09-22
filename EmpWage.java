@@ -12,20 +12,21 @@ public class EmpWage {
         int present=1;
         int check=att.nextInt(max);
         int totalWage;
-        if(check == present)
+        switch (check)
         {
-            totalWage=wage_per_hour*hour_in_day;
-            System.out.println("total Wage for Day : " + totalWage);
+            case 1:
+                totalWage=wage_per_hour*hour_in_day;
+                System.out.println("total Wage for Day : " + totalWage);
+                break;
+            case 2:
+                totalWage=wage_per_hour*half_time;
+                System.out.println("PartTime Wage : " + totalWage);
+                break;
+            default:
+                System.out.println("Employee is absent");
+                break;
         }
-        else if (check == 2)
-        {
-            totalWage=wage_per_hour*half_time;
-            System.out.println("PartTime Wage : " + totalWage);
-        }
-        else
-        {
-            System.out.println("Employee is absent");
-        }
+
     }
 
 }
