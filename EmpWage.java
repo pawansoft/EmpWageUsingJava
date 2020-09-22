@@ -14,7 +14,8 @@ public class EmpWage {
         int total_day=0;
         int total_hour=0;
         int total_working_day=20;
-        while (total_day < 20)
+
+        while ((total_day < 20 && total_hour < 100))
         {
             int check=att.nextInt(max);
             switch (check)
@@ -28,9 +29,10 @@ public class EmpWage {
                     total_hour=total_hour+4;
                     break;
                 default:
-                    
+
                     break;
             }
+
         }
         System.out.println("Total Wage for month : "+totalWage);
         System.out.println("total Days : " +total_day);
