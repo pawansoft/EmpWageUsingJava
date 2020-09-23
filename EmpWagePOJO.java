@@ -8,8 +8,8 @@ public class EmpWagePojo implements EmpWagePOJI {
     Random att=new Random();
     int total_Wage=0;
     @Override
-    public int calculate_Total_Wage(int max, int half_time, int wage_per_hour, int hour_in_day, int present, int totalWage, int total_day, int total_hour, int total_working_day) {
-        while ((total_day < 20 && total_hour < 100))
+    public int calculate_Total_Wage(int workingHourPerMonth, int workingDayInMonth, int max, int half_time, int wage_per_hour, int hour_in_day, int present, int totalWage, int total_day, int total_hour, int total_working_day) {
+        while ((total_day < workingDayInMonth && total_hour < workingHourPerMonth))
         {
             int check=att.nextInt(max);
             switch (check)
