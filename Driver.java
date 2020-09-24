@@ -5,6 +5,7 @@ import com.EmpWage.EmpWageBuilder;
 import com.EmpWage.POJO.EmpWagePojo;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class Driver {
@@ -12,7 +13,8 @@ public class Driver {
     {
         //Declaring Array List to store the total Employee wage of company
         ArrayList wagePerCompany=new ArrayList<>();
-
+        //Declaring the Has map to store total wage for query by company
+        HashMap totalWageOfCompany=new HashMap();
         //creating object of scanner class to take input from user
         Scanner sc=new Scanner(System.in);
         System.out.println("Enter the number of companies :");
@@ -43,6 +45,7 @@ public class Driver {
             System.out.println("Company : "+empWageBuilder.getCompanyName());
             System.out.println("TotalWage :" +empWageBuilder.getTotalWage());
     //Adding the each total wage in array list, fetching from employee builder
+            totalWageOfCompany.put(company,empWageBuilder.getTotalWage() );
             wagePerCompany.add(empWageBuilder.getTotalWage());
     //Adding the Daily Wage into same Array List
             wagePerCompany.add(empWagePojo.WagePerDay(workingHourPerMonth, workingDayInMonth, empDAO.getHalf_time(),empDAO.getWage_per_hour(), empDAO.getHour_in_day(), empDAO.getTotalWage(), empDAO.getTotal_day(),empDAO.getTotal_hour(),empDAO.getTotal_working_day()));
@@ -54,6 +57,11 @@ public class Driver {
         {
             System.out.println(wage);
         }
+//Checking the total wage with company Name
+
+        System.out.println("Enter the company name to get total wage");
+        String comp=sc.next();
+        System.out.println("Total wage of company : "+comp+" = " +totalWageOfCompany.get(comp));
 
     }
 }
