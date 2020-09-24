@@ -44,6 +44,8 @@ public class Driver {
             System.out.println("TotalWage :" +empWageBuilder.getTotalWage());
     //Adding the each total wage in array list, fetching from employee builder
             wagePerCompany.add(empWageBuilder.getTotalWage());
+    //Adding the Daily Wage into same Array List
+            wagePerCompany.add(empWagePojo.WagePerDay(workingHourPerMonth, workingDayInMonth, empDAO.getHalf_time(),empDAO.getWage_per_hour(), empDAO.getHour_in_day(), empDAO.getTotalWage(), empDAO.getTotal_day(),empDAO.getTotal_hour(),empDAO.getTotal_working_day()));
 
 
         }
