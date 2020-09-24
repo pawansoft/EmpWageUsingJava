@@ -1,25 +1,24 @@
 package com.EmpWage.DAO;
 
 public class EmpWageDAO {
-    int half_time;
-    int wage_per_hour;
-    int hour_in_day;
-    int present;
-    int totalWage;
-    int total_day;
-    int total_hour;
-    int total_working_day;
+    private int half_time;
+    private int wage_per_hour;
+    private int hour_in_day;
+    private int totalWage;
+    private int total_day;
+    private int total_hour;
+    private int total_working_day;
 
 
     public int getHalf_time() {
         return half_time;
     }
 
-    public EmpWageDAO(int half_time, int wage_per_hour, int hour_in_day, int present, int totalWage, int total_day, int total_hour, int total_working_day) {
+    public EmpWageDAO(int half_time, int wage_per_hour, int hour_in_day, int totalWage, int total_day, int total_hour, int total_working_day) {
         this.half_time = half_time;
         this.wage_per_hour = wage_per_hour;
         this.hour_in_day = hour_in_day;
-        this.present = present;
+
         this.totalWage = totalWage;
         this.total_day = total_day;
         this.total_hour = total_hour;
@@ -44,14 +43,6 @@ public class EmpWageDAO {
 
     public void setHour_in_day(int hour_in_day) {
         this.hour_in_day = hour_in_day;
-    }
-
-    public int getPresent() {
-        return present;
-    }
-
-    public void setPresent(int present) {
-        this.present = present;
     }
 
     public int getTotalWage() {
